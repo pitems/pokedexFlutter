@@ -1,6 +1,6 @@
 # Pokedex
 
-THis is a base 1.0 for a Pokedex App
+This is a base 1.0 for a Pokedex App
 
 ## Installing and running the project
 
