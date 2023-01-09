@@ -1,16 +1,35 @@
-# pokedex
+# Pokedex
 
-A new Flutter project.
+THis is a base 1.0 for a Pokedex App
 
-## Getting Started
+## Installing and runnung the project
 
-This project is a starting point for a Flutter application.
+The app is developed in flutter version 3.3.6 using the Flutter Version Manager(FVM)
 
-A few resources to get you started if this is your first Flutter project:
+### Things you need
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
++ [Flutter](https://docs.flutter.dev/get-started/install)
++ A Mobile Device or a Emulator
+  
+Just Download the Flutter version on your device of preference and run it using flutter run --release , remember to have either your device connected or have the emulator running.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Packages Used in this project
+
+The App was developed using the following packages
+
++ [Get](https://pub.dev/packages/get)
++ [Dio](https://pub.dev/packages/dio)
++ [Responsive Sizer](https://pub.dev/packages/responsive_sizer)
++ [Get It](https://pub.dev/packages/get_it)
++ [Transparent Image](https://pub.dev/packages/transparent_image)
++ [Dartz](https://pub.dev/packages/dartz)
++ [Basic Utils](https://pub.dev/packages/basic_utils)
++ [Palette Generator](https://pub.dev/packages/palette_generator)
++ [Md2 Tab Indicator](https://pub.dev/packages/md2_tab_indicator)
++ [Percent Indicator](https://pub.dev/packages/percent_indicator)
++ [HexColor](https://pub.dev/packages/hexcolor)
++ [Carousel Slider](https://pub.dev/packages/carousel_slider)
++ [Shrink Side Menu](https://pub.dev/packages/shrink_sidemenu)
++ [Community Material Icons](https://pub.dev/packages/community_material_icon)
++ [Animate do](https://pub.dev/packages/animate_do)
++ [Cached Network Image](https://pub.dev/packages/cached_network_image)
