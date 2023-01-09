@@ -2,7 +2,7 @@
 
 THis is a base 1.0 for a Pokedex App
 
-## Installing and runnung the project
+## Installing and running the project
 
 The app is developed in flutter version 3.3.6 using the Flutter Version Manager(FVM)
 
