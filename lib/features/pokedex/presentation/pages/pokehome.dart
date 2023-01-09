@@ -72,43 +72,71 @@ class _PokeHomeState extends State<PokeHome> {
                                             onTap: () {
                                               _.goToPokeDataCall(index);
                                             },
-                                            child: Card(
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: const AssetImage(
+                                                          '${AppAssets.root}pokeball.png'),
+                                                      colorFilter: ColorFilter.mode(
+                                                          Colors.black.withOpacity(0.2),
+                                                          BlendMode.dstATop)),
+                                                  borderRadius: BorderRadius.circular(180)),
                                               // color: ,
                                               margin: const EdgeInsets.symmetric(
                                                   vertical: 8, horizontal: 10),
-                                              child: Column(
-                                                children: [
-                                                  Hero(
-                                                      tag: 'image-$index',
-                                                      child: CachedNetworkImage(
-                                                          height: 150,
-                                                          fit: BoxFit.fill,
-                                                          fadeInCurve: Curves.easeInOut,
-                                                          placeholder: (context, url) {
-                                                            return Image.asset(
-                                                              '${AppAssets.root}pokeball.png',
-                                                              scale: 4,
-                                                            );
-                                                          },
-                                                          errorWidget: (context, url, error) {
-                                                            return Image.asset(
-                                                              '${AppAssets.root}pokeball.png',
-                                                              scale: 4,
-                                                            );
-                                                          },
-                                                          imageUrl:
-                                                              '${_.url}${_.getPokemonId(_.list.value.results[index].url)}.png')),
-                                                  Text(StringUtils.capitalize(
-                                                      _.list.value.results[index].name))
-                                                ],
-                                              ),
+                                              child: Stack(children: [
+                                                Positioned(
+                                                  left: 20,
+                                                  top: 3,
+                                                  child: Column(
+                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    children: [
+                                                      Hero(
+                                                          tag: 'image-$index',
+                                                          child: CachedNetworkImage(
+                                                              height: 130,
+                                                              fit: BoxFit.fill,
+                                                              fadeInCurve: Curves.easeInOut,
+                                                              placeholder: (context, url) {
+                                                                return Image.asset(
+                                                                  '${AppAssets.root}pokeball.png',
+                                                                  scale: 6,
+                                                                );
+                                                              },
+                                                              errorWidget: (context, url, error) {
+                                                                return Image.asset(
+                                                                  '${AppAssets.root}pokeball.png',
+                                                                  scale: 6,
+                                                                );
+                                                              },
+                                                              imageUrl:
+                                                                  '${_.url}${_.getPokemonId(_.list.value.results[index].url)}.png')),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(top: 80, left: 20),
+                                                  child: Center(
+                                                    child: SizedBox(
+                                                      width: 140,
+                                                      child: Text(
+                                                        '#${_.getPokemonId(_.list.value.results[index].url)} ${StringUtils.capitalize(_.list.value.results[index].name)}',
+                                                        maxLines: 1,
+                                                        overflow: TextOverflow.ellipsis,
+                                                        style: const TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight: FontWeight.bold),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              ]),
                                             ),
                                           ))),
                             ],
                           ),
                         ),
-                      ),
-                    );
+                      ));
         });
   }
 }

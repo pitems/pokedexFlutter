@@ -57,7 +57,7 @@ class PokeDataController extends GetxController {
       errorLoading.value = true;
     }, (r) async {
       pokeData = r;
-      mainColor = await getImagePalette(NetworkImage(pokeData.sprites.frontDefault!));
+      mainColor = await getImagePalette(NetworkImage(pokeData.sprites.frontDefault));
       for (var element in pokeData.stats) {
         totalStat + element.baseStat;
       }
@@ -69,7 +69,10 @@ class PokeDataController extends GetxController {
   callPokemonSpecies() async {
     final Either<Failure, PokemonSpecies> fetchResult =
         await _useCases.getPokemonSpecies(name: pokeName.value);
-    fetchResult.fold((l) => print(l), (r) {
+    fetchResult.fold((l) {
+      loading.value = false;
+      errorLoading.value = true;
+    }, (r) {
       pokeSpecies = r;
       pokeDescription.value = pokeSpecies.flavorTextEntries[0].flavorText.replaceAll('\n', '');
     });
