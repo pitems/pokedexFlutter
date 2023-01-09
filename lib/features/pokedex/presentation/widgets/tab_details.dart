@@ -90,8 +90,6 @@ Widget details(PokemonData pokeData, PokemonSpecies pokeSpecies) {
           const SizedBox(
             height: 15,
           ),
-
-          //Add Species api
         ],
       ),
     ),

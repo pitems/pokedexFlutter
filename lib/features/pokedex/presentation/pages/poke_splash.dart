@@ -27,24 +27,21 @@ class _PokeSplashState extends State<PokeSplash> {
   int _start = 3;
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 50.h,
-      child: Scaffold(
-        backgroundColor: Palette.background,
-        body: Stack(children: [
-          SizedBox(
-            height: 100.h,
-            child: ElasticIn(
-              duration: const Duration(seconds: 5),
-              child: SizedBox(
-                height: 300,
-                child: Image.asset('${AppAssets.root}pokeball.png'),
-              ),
+    return Scaffold(
+      backgroundColor: Palette.background,
+      body: Stack(children: [
+        SizedBox(
+          height: 100.h,
+          child: ElasticIn(
+            duration: const Duration(seconds: 5),
+            child: SizedBox(
+              height: 300,
+              child: Image.asset('${AppAssets.root}pokeball.png'),
             ),
           ),
-          Positioned(top: 5.h, child: Image.asset('${AppAssets.root}pokedex.png'))
-        ]),
-      ),
+        ),
+        Positioned(top: 5.h, child: Image.asset('${AppAssets.root}pokedex.png'))
+      ]),
     );
   }
 
