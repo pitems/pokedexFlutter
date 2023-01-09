@@ -11,6 +11,7 @@ class PokemonDataModel extends PokemonData {
       required List<Moves> moves,
       required String name,
       required int order,
+      required List<Object> pastTypes,
       required Species species,
       required Sprites sprites,
       required List<Stats> stats,
@@ -26,12 +27,12 @@ class PokemonDataModel extends PokemonData {
             moves: moves,
             name: name,
             order: order,
+            pastTypes: pastTypes,
             species: species,
             sprites: sprites,
             stats: stats,
             types: types,
             weight: weight);
-
   factory PokemonDataModel.fromJson(Map<String, dynamic> json) {
     final List<Abilities>? abilities = json['abilities'] is List ? <Abilities>[] : null;
     if (abilities != null) {
@@ -50,6 +51,17 @@ class PokemonDataModel extends PokemonData {
         if (item != null) {
           tryCatch(() {
             moves.add(Moves.fromJson(asT<Map<String, dynamic>>(item)!));
+          });
+        }
+      }
+    }
+
+    final List<Object>? pastTypes = json['past_types'] is List ? <Object>[] : null;
+    if (pastTypes != null) {
+      for (final dynamic item in json['past_types']!) {
+        if (item != null) {
+          tryCatch(() {
+            pastTypes.add(asT<Object>(item)!);
           });
         }
       }
@@ -86,6 +98,7 @@ class PokemonDataModel extends PokemonData {
       moves: moves!,
       name: asT<String>(json['name'])!,
       order: asT<int>(json['order'])!,
+      pastTypes: pastTypes!,
       species: Species.fromJson(asT<Map<String, dynamic>>(json['species'])!),
       sprites: Sprites.fromJson(asT<Map<String, dynamic>>(json['sprites'])!),
       stats: stats!,

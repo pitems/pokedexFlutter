@@ -26,7 +26,6 @@ class PokemonDataRemoteImpl implements PokemonDataFromRemoteDS {
       PokemonDataModel execution = PokemonDataModel.fromJson(response.data);
       return execution;
     } catch (e) {
-      print(e);
       throw const FetchException(message: 'Failed to get Data');
     }
   }
@@ -38,7 +37,6 @@ class PokemonDataRemoteImpl implements PokemonDataFromRemoteDS {
       PokemonSpeciesModel execution = PokemonSpeciesModel.fromJson(response.data);
       return execution;
     } catch (e) {
-      print(e);
       throw const FetchException(message: 'Failed to get Data');
     }
   }

@@ -29,6 +29,7 @@ class PokemonData {
     required this.moves,
     required this.name,
     required this.order,
+    required this.pastTypes,
     required this.species,
     required this.sprites,
     required this.stats,
@@ -45,6 +46,7 @@ class PokemonData {
   final List<Moves> moves;
   final String name;
   final int order;
+  final List<Object> pastTypes;
   final Species species;
   final Sprites sprites;
   final List<Stats> stats;
@@ -66,6 +68,7 @@ class PokemonData {
         'moves': moves,
         'name': name,
         'order': order,
+        'past_types': pastTypes,
         'species': species,
         'sprites': sprites,
         'stats': stats,
@@ -298,7 +301,7 @@ class Species {
 
 class Sprites {
   const Sprites({
-    required this.backDefault,
+    this.backDefault,
     this.backFemale,
     this.backShiny,
     this.backShinyFemale,
@@ -309,7 +312,7 @@ class Sprites {
   });
 
   factory Sprites.fromJson(Map<String, dynamic> json) => Sprites(
-        backDefault: asT<String>(json['back_default'])!,
+        backDefault: asT<String?>(json['back_default']),
         backFemale: asT<String?>(json['back_female']),
         backShiny: asT<String?>(json['back_shiny']),
         backShinyFemale: asT<String?>(json['back_shiny_female']),
@@ -319,7 +322,7 @@ class Sprites {
         frontShinyFemale: asT<Object?>(json['front_shiny_female']),
       );
 
-  final String backDefault;
+  final String? backDefault;
   final String? backFemale;
   final String? backShiny;
   final String? backShinyFemale;

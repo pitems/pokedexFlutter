@@ -36,6 +36,7 @@ class _PokeDataPageState extends State<PokeDataPage> with SingleTickerProviderSt
     // TODO: implement dispose
     _pokeDataController.loading.value = true;
     _pokeDataController.totalStat.value = 0;
+    _pokeDataController.visibility.value = true;
     super.dispose();
   }
 
